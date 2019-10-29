@@ -13,7 +13,7 @@ const Users = ({users, loading}) => {
     if(loading) {
         return <Spinner />
     } else {
-        return   <div style={userStyle}>
+        return  <div style={userStyle}>
                     {users.map(user => (
                         <UserItem key={user.id} user={user} />
                     ))}
@@ -22,7 +22,7 @@ const Users = ({users, loading}) => {
     }
 
 UserItem.propTypes = {
-    users: PropTypes.array.isRequired,
+    users: PropTypes.array,
     loading: PropTypes.bool
 }
 
