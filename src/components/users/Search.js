@@ -21,20 +21,21 @@ class Search extends Component {
         const {text} = this.state;
         return (
             <div>
-                <form onSubmit={this.onSubmit} className="form">
+                <form onSubmit={this.onSubmit} className="form ">
                     <input 
                         type="text" 
                         name="text" 
                         placeholder="Search Github users..." 
                         value={text}
                         onChange={this.onChange}/>
+                    <span className="grid-2">
                     <input type="submit" value="Search" className="btn btn-dark btn-block"/>
+                    <input
+                        className="btn btn-dark btn-block text-center"
+                        onClick={this.props.clearUsers}
+                        value="Clear"/>
+                    </span>
                 </form>
-                <button 
-                    className="btn btn-success btn-block"
-                    onClick={this.props.clearUsers}>
-                    Clear
-                </button>
             </div>
         )
     }
