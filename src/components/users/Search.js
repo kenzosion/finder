@@ -30,10 +30,10 @@ class Search extends Component {
                         onChange={this.onChange}/>
                     <span className="grid-2">
                     <input type="submit" value="Search" className="btn btn-dark btn-block"/>
-                    <input
+                    {this.props.showClear && <input
                         className="btn btn-dark btn-block text-center"
                         onClick={this.props.clearUsers}
-                        value="Clear"/>
+                        value="Clear"/>}
                     </span>
                 </form>
             </div>
