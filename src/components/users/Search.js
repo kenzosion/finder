@@ -21,7 +21,7 @@ class Search extends Component {
         const {text} = this.state;
         return (
             <div>
-                <form onSubmit={this.onSubmit} className="form ">
+                <form onSubmit={this.onSubmit} className="form">
                     <input 
                         type="text" 
                         name="text" 
