@@ -27,7 +27,7 @@ class Search extends Component {
         const {showClear, clearUsers} = this.props;
         return (
             <div>
-                <form onSubmit={this.onSubmit} className="form ">
+                <form onSubmit={this.onSubmit} className="form">
                     <input 
                         type="text" 
                         name="text" 
