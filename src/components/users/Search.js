@@ -12,13 +12,19 @@ class Search extends Component {
 
     onSubmit = e => {
         e.preventDefault()
-        this.props.searchUsers(this.state.text)
-        this.setState({ text: ''})
+        // alert users to enter some text
+        if (this.state.text === ''){
+            this.props.setAlert('Please enter a user name', 'light')
+        } else {
+            this.props.searchUsers(this.state.text)
+            this.setState({ text: ''})
+        }
     }
 
     
     render() {
         const {text} = this.state;
+        const {showClear, clearUsers} = this.props;
         return (
             <div>
                 <form onSubmit={this.onSubmit} className="form ">
@@ -30,9 +36,9 @@ class Search extends Component {
                         onChange={this.onChange}/>
                     <span className="grid-2">
                     <input type="submit" value="Search" className="btn btn-dark btn-block"/>
-                    {this.props.showClear && <input
+                    {showClear && <input
                         className="btn btn-dark btn-block text-center"
-                        onClick={this.props.clearUsers}
+                        onClick={clearUsers}
                         value="Clear"/>}
                     </span>
                 </form>

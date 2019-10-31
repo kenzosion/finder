@@ -9,8 +9,8 @@ import axios from 'axios'
 class App extends Component {
   state = {
     users: [],
-    loading: false
-
+    loading: false,
+    alert: null
   }
 
   async componentDidMount() {
@@ -30,6 +30,10 @@ class App extends Component {
     this.setState({ users: [], loading: false})
   }
 
+  setAlert = (msg, type) => {
+    this.setState({ alert:{msg, type} })
+  }
+
   render() {
     const {loading, users} = this.state;
     return (
@@ -38,7 +42,8 @@ class App extends Component {
          <div className="container">
            <Search searchUsers={this.searchUsers} 
                    clearUsers={this.clearUsers} 
-                   showClear={users.length > 0 ? true: false}/>
+                   showClear={users.length > 0 ? true: false}
+                   setAlert={this.setAlert}/>
            <Users  loading={loading} 
                    users={users}/>
          </div>
