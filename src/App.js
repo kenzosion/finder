@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Alert from './components/layout/Alert'
 import Users from './components/users/Users' 
@@ -42,6 +43,7 @@ class App extends Component {
   render() {
     const {loading, users} = this.state;
     return (
+      <Router>
       <div className="App">
        <Navbar title="Github finder" icon="fab fa-github"/>
          <div className="container">
@@ -54,6 +56,7 @@ class App extends Component {
                    users={users}/>
          </div>
       </div>
+      </Router>
     );
   }
 }
