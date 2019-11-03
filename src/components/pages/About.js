@@ -1,9 +1,10 @@
 import React from 'react'
 
-const About = props => {
+const About = () => {
     return (
         <div>
-            
+           <h1>About This App</h1> 
+           <h2>This is the app to search for Github users</h2>
         </div>
     )
 }
