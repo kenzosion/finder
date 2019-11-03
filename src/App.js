@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Fragment, Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
@@ -48,12 +48,21 @@ class App extends Component {
        <Navbar title="Github finder" icon="fab fa-github"/>
          <div className="container">
            <Alert alert={this.state.alert}/>
-           <Search searchUsers={this.searchUsers} 
-                   clearUsers={this.clearUsers} 
-                   showClear={users.length > 0 ? true: false}
-                   setAlert={this.setAlert}/>
-           <Users  loading={loading} 
-                   users={users}/>
+           <Switch>
+             {/* support multiple components in one route */}
+            <Route exact path='/' render={props => {
+              <Fragment>
+                <Search searchUsers={this.searchUsers}
+                  clearUsers={this.clearUsers}
+                  showClear={users.length > 0 ? true : false}
+                  setAlert={this.setAlert} />
+                  <Users loading={loading}
+                    users={users} />  
+              </Fragment>
+            }}/>
+
+           </Switch>
+           
          </div>
       </div>
       </Router>
