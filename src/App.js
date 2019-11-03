@@ -49,8 +49,9 @@ class App extends Component {
          <div className="container">
            <Alert alert={this.state.alert}/>
            <Switch>
+            
              {/* support multiple components in one route */}
-            <Route exact path='/' render={props => {
+            <Route exact path='/' render={props => (
               <Fragment>
                 <Search searchUsers={this.searchUsers}
                   clearUsers={this.clearUsers}
@@ -59,8 +60,7 @@ class App extends Component {
                   <Users loading={loading}
                     users={users} />  
               </Fragment>
-            }}/>
-
+            )}/>
            </Switch>
            
          </div>
