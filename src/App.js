@@ -6,6 +6,7 @@ import Alert from './components/layout/Alert'
 import Users from './components/users/Users' 
 import Search from './components/users/Search' 
 import About from './components/pages/About' 
+import User from './components/users/User'
 
 import axios from 'axios'
 
@@ -50,7 +51,7 @@ class App extends Component {
  
 
   render() {
-    const {loading, users} = this.state;
+    const {loading, users, user} = this.state;
     return (
       <Router>
       <div className="App">
@@ -71,6 +72,9 @@ class App extends Component {
               </Fragment>
             )}/>
             <Route exact path='/about' component={About} />
+            <Route exact path='/user/:login' render={props => (
+                <User user={user} getUser={this.getUser} {...props} loading={loading}/>
+            )} />
            </Switch>
            
          </div>
