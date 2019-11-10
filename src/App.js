@@ -12,6 +12,7 @@ import axios from 'axios'
 class App extends Component {
   state = {
     users: [],
+    user: {},
     loading: false,
     alert: null
   }
@@ -40,6 +41,13 @@ class App extends Component {
       this.setState({alert: null})
     }, 2000);
   }
+
+  getUser = async (username) => {
+    this.setState({ loading: true })
+    const res = await axios.get(`https://api.github.com/users/${username}`);
+    this.setState({ user: res.data, loading: false })
+  }
+ 
 
   render() {
     const {loading, users} = this.state;
