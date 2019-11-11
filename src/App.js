@@ -52,7 +52,7 @@ class App extends Component {
 
   getUserRepos = async (username) => {
     this.setState({ loading: true })
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`);
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5`);
     this.setState({ repos: res.data, loading: false })
   }
  
