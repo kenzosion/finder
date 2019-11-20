@@ -18,12 +18,13 @@ const App = () => {
   const [repos, setRepos] = useState([]);
 
 
-  useEffect (() => {(async() =>{
+  useEffect (() => {
+    async() => {
     setLoading(true);
     const res = await axios.get('https://api.github.com/users');
       setUsers(res.data)
       setLoading(false)
-  })}, [])
+  }}, [])
 
   const searchUsers = async text => {
     setLoading(true);
