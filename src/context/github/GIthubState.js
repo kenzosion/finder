@@ -9,3 +9,5 @@ import {
     GET_REPOS,
     SET_LOADING
 } from '../types'
+
+ const [state, dispatch] = useReducer(GithubReducer, initialState, init)
