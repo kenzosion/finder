@@ -29,12 +29,6 @@ const App = () => {
     }
   }, [])
 
-  const searchUsers = async text => {
-    setLoading(true);
-    const res = await axios.get(`https://api.github.com/search/users?q=${text}`);
-    setUsers(res.data.items)
-    setLoading(false)
-  }
 
   const clearUsers = () => {
     setUsers([])
