@@ -69,7 +69,7 @@ const App = () => {
               {/* support multiple components in one route */}
               <Route exact path='/' render={props => (
                 <Fragment>
-                  <Search searchUsers={searchUsers}
+                  <Search
                     clearUsers={clearUsers}
                     showClear={users.length > 0 ? true : false}
                     setAlert={setAlertMsg} />
