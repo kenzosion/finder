@@ -73,8 +73,7 @@ const App = () => {
                     clearUsers={clearUsers}
                     showClear={users.length > 0 ? true : false}
                     setAlert={setAlertMsg} />
-                  <Users loading={loading}
-                    users={users} />
+                  <Users />
                 </Fragment>
               )} />
               <Route exact path='/about' component={About} />
