@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import UserItem from './UserItem'
 import Spinner from '../layout/Spinner'
 import PropTypes from 'prop-types'
 import GithubContext from '../../context/github/githubContext'
+
 
 const userStyle = {
     display: 'grid',
@@ -10,7 +11,10 @@ const userStyle = {
     gridGap: '2rem'
 }
 
-const Users = ({users, loading}) => {
+const Users = () => {
+    const githubContext = useContext(GithubContext);
+    const { loading, users } = githubContext;
+
     if(loading) {
         return <Spinner />
     } else {
