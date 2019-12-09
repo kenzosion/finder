@@ -30,11 +30,6 @@ const App = () => {
   }, [])
 
 
-  const clearUsers = () => {
-    setUsers([])
-    setLoading(false)
-  }
-
   const setAlertMsg = (msg, type) => {
     setAlert({ msg, type })
     setTimeout(() => {
@@ -70,8 +65,7 @@ const App = () => {
               <Route exact path='/' render={props => (
                 <Fragment>
                   <Search
-                    clearUsers={clearUsers}
-                    showClear={users.length > 0 ? true : false}
+                   
                     setAlert={setAlertMsg} />
                   <Users />
                 </Fragment>
