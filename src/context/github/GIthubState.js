@@ -55,7 +55,8 @@ return( <GithubContext.Provider
         repos: state.repos,
         loading: state.loading,
         searchUsers,
-        clearUsers
+        clearUsers,
+        getUser
     }}>
     {props.children}
 </GithubContext.Provider>)
