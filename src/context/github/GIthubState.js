@@ -33,6 +33,16 @@ const GithubState = props => {
 
 
     const clearUsers = () => dispatch({ type: CLEAR_USERS});
+
+    const getUser = async (username) => {
+        setLoading();
+        const res = await axios.get(`https://api.github.com/users/${username}`);
+        
+        dispatch ({
+            type: GET_USER,
+            payload: res.data
+        });
+    }
     
 
     const setLoading = () => dispatch({ type: SET_LOADING });
