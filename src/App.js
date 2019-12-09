@@ -37,12 +37,7 @@ const App = () => {
     }, 2000);
   }
 
-  const getUser = async (username) => {
-    setLoading(true);
-    const res = await axios.get(`https://api.github.com/users/${username}`);
-    setUser(res.data)
-    setLoading(false)
-  }
+ 
 
   const getUserRepos = async (username) => {
     setLoading(true);
@@ -72,11 +67,11 @@ const App = () => {
               )} />
               <Route exact path='/about' component={About} />
               <Route exact path='/user/:login' render={props => (
-                <User user={user}
-                  getUser={getUser}
+                <User 
+                 
                   getUserRepos={getUserRepos}
                   {...props}
-                  loading={loading}
+                
                   repos={repos} />
               )} />
             </Switch>
